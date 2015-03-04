@@ -8,7 +8,7 @@ hooks:
     -location: script/cleanupfiles.sh
       timeout: 300
       runas: root
-  AfterInstall:
+  AfterInstall: 
     -location: script/change_permissions.sh
       timeout: 300
       runas: root
