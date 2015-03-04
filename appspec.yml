@@ -1,22 +1,22 @@
+version: 0.0
 os: linux
 files:
- -source: /
- destination: /usr/share/nginx/html/CodeDeployGitHubDemo
+  - source: /
+    destination: /usr/share/nginx/html/prakashul
 hooks:
- BeforeInstall:
-        -location: script/cleanupfiles.sh
-        timeout: 300
-        runas: root
- AfterInstall:
-        -location: script/change_permissions.sh
-        timeout: 300
-        runas: root
- ApplicationStart:
-        -location: script/start_server.sh
-        timeout: 300
-        runas: root
- ApplicationStop:
-        -location: script/stop_server.sh
-        timeout: 300
-        runas: root
-
+  BeforeInstall:
+    - location: script/cleanupfiles.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: script/change_permissions.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: script/start_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: script/stop_server.sh
+      timeout: 300
+      runas: root
